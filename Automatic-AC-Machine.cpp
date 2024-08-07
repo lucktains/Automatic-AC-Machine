@@ -8,16 +8,16 @@ void ctrl_v(int x = 86) { //模拟ctrl+v
 	keybd_event(x, 0, KEYEVENTF_KEYUP, 0); //弹起v
 	keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, 0); //弹起ctrl
 }
-void ctrl_c(int x = 67) { //模拟ctrl+c
+void ctrl_c(int x = 67) { //模拟ctrl+v
 	keybd_event(VK_CONTROL, 0, 0, 0); //按下ctrl
-	keybd_event(x, 0, 0, 0); //按下c
-	keybd_event(x, 0, KEYEVENTF_KEYUP, 0); //弹起c
+	keybd_event(x, 0, 0, 0); //按下v
+	keybd_event(x, 0, KEYEVENTF_KEYUP, 0); //弹起v
 	keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, 0); //弹起ctrl
 }
-void ctrl_a(int x = 65) { //模拟ctrl+a
+void ctrl_a(int x = 65) { //模拟ctrl+v
 	keybd_event(VK_CONTROL, 0, 0, 0); //按下ctrl
-	keybd_event(x, 0, 0, 0); //按下a
-	keybd_event(x, 0, KEYEVENTF_KEYUP, 0); //弹起a
+	keybd_event(x, 0, 0, 0); //按下v
+	keybd_event(x, 0, KEYEVENTF_KEYUP, 0); //弹起v
 	keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, 0); //弹起ctrl
 }
 int mouseclick(int x, int y) {
@@ -51,7 +51,7 @@ int main() {
 	vector<string>ves;
 	cin >> ss;
 	for (char c : ss) {
-		if (c >= 'A' && c <= 'Z') {
+		if (c == 'P') {
 			if (sss != "") {
 				ves.push_back(sss);
 			}
@@ -59,6 +59,7 @@ int main() {
 		}
 		sss += c;
 	}
+	ves.push_back(sss);
 	for (string s : ves) {
 		ShellExecute(NULL, "open", (s1 + s + s2).c_str(), NULL, NULL, SW_SHOWNORMAL);
 		Sleep(1000);
@@ -66,10 +67,11 @@ int main() {
 		ctrl_a();
 		ctrl_c();
 		ShellExecute(NULL, "open", (s3 + s + s4).c_str(), NULL, NULL, SW_SHOWNORMAL);
-		Sleep(2000);
+		Sleep(1000);
 		mouseclick(548, 553);
 		ctrl_v();
 		mouseclick(424, 756);
 	}
 	return 0;
 }
+
