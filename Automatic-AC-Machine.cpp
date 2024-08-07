@@ -8,16 +8,16 @@ void ctrl_v(int x = 86) { //模拟ctrl+v
 	keybd_event(x, 0, KEYEVENTF_KEYUP, 0); //弹起v
 	keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, 0); //弹起ctrl
 }
-void ctrl_c(int x = 67) { //模拟ctrl+v
+void ctrl_c(int x = 67) { //模拟ctrl+c
 	keybd_event(VK_CONTROL, 0, 0, 0); //按下ctrl
-	keybd_event(x, 0, 0, 0); //按下v
-	keybd_event(x, 0, KEYEVENTF_KEYUP, 0); //弹起v
+	keybd_event(x, 0, 0, 0); //按下c
+	keybd_event(x, 0, KEYEVENTF_KEYUP, 0); //弹起c
 	keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, 0); //弹起ctrl
 }
-void ctrl_a(int x = 65) { //模拟ctrl+v
+void ctrl_a(int x = 65) { //模拟ctrl+a
 	keybd_event(VK_CONTROL, 0, 0, 0); //按下ctrl
-	keybd_event(x, 0, 0, 0); //按下v
-	keybd_event(x, 0, KEYEVENTF_KEYUP, 0); //弹起v
+	keybd_event(x, 0, 0, 0); //按下a
+	keybd_event(x, 0, KEYEVENTF_KEYUP, 0); //弹起a
 	keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, 0); //弹起ctrl
 }
 int mouseclick(int x, int y) {
