@@ -62,12 +62,12 @@ int main() {
 	ves.push_back(sss);
 	for (string s : ves) {
 		ShellExecute(NULL, "open", (s1 + s + s2).c_str(), NULL, NULL, SW_SHOWNORMAL);
-		Sleep(1000);
+		Sleep(2500);
 		mouseclick(644, 717);
 		ctrl_a();
 		ctrl_c();
 		ShellExecute(NULL, "open", (s3 + s + s4).c_str(), NULL, NULL, SW_SHOWNORMAL);
-		Sleep(1000);
+		Sleep(2500);
 		mouseclick(548, 553);
 		ctrl_v();
 		mouseclick(424, 756);
